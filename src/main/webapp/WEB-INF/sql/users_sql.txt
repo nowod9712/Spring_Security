@@ -1,0 +1,11 @@
+CREATE TABLE users(
+	username varchar(50) NOT NULL PRIMARY KEY,
+	password varchar(50) NOT NULL,
+	enabled char(1) DEFAULT '1'	
+);
+
+INSERT INTO users (username, password)values('user00', 'pw00');
+INSERT INTO users (username, password)values('member00', 'pw00');
+INSERT INTO users (username, password)values('admin00', 'pw00');
+
+SELECT * FROM users;
