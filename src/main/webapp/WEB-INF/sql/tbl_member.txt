@@ -1,0 +1,14 @@
+CREATE TABLE tbl_member(
+      userid varchar(50) NOT NULL PRIMARY KEY,
+      userpw varchar(100) NOT NULL,
+      username varchar(100) NOT NULL,
+      regdate date default (current_date),
+      updatedate date default (current_date),
+      enabled char(1) DEFAULT '1'
+);
+
+CREATE TABLE tbl_member_auth(
+      userid varchar(50) NOT NULL,
+      auth varchar(50) NOT NULL,
+      CONSTRAINT fk_member_auth FOREIGN KEY(userid) REFERENCES tbl_member(userid)
+);
